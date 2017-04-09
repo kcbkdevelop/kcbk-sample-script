@@ -37,4 +37,14 @@ function quest_state_851(){
 }
 ```
 
+現在のカウントを知りたい場合は、汎用出撃のスクリプト編集画面で
+```javascript
+function is_enabled(){
+	var cnt = count_win_rank_boss(5,1,0,"A",851);
+	log("回数:" + cnt);
+	return fasle;
+}
+```
+のようにテスト実行をしてみてください。
+
 なお、艦隊も条件に加えたscriptを作成したい場合はscripts/quest_state_battle.txtの249,「第五戦隊」出撃せよ！などの既存の定期任務を参考にしてください。
