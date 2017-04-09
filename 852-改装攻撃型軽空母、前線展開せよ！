@@ -1,0 +1,40 @@
+# 852,改装攻撃型軽空母、前線展開せよ！
+
+## quest script
+``` javascript
+function quest_state_852(){
+	if(
+		count_win_rank_boss(6,2,0,"A",852)  >= 1
+		&& count_win_rank_boss(6,5,0,"S",852)  >= 1
+		)
+	{
+		return 1;
+	}
+	return 0;
+}
+```
+
+## 6-2
+``` javascript
+function is_enabled(){
+	if(!quest_in_progress(852)){
+		return false;
+	}
+	return count_win_rank_boss(
+		6,2,0,"S",852) == 0
+}
+#include "scripts/eventlog_include.txt"
+```
+
+
+## 6-5
+``` javascript
+function is_enabled(){
+	if(!quest_in_progress(852)){
+		return false;
+	}
+	return count_win_rank_boss(
+		6,5,0,"S",852) == 0
+}
+#include "scripts/eventlog_include.txt"
+```
